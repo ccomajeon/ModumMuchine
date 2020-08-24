@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Muchin Model</title>
+</head>
+<body>
+<section>
+    <form name = "modelform" action = "/" method="post">
+        원하시는 날짜를 입력하세요: <input type="text" name="date_temp"
+                                                 placeholder= "(월단위(0 = 2019/01))"/>
+        <input type = "submit" value = "입력"/>
+        <input type = "reset" value = "취소"/>
+    </form>
+    <div>
+        {% if spend %}
+            <h5>결과: {{'%0.0f' % spend }}000원의 사용량이 예측됩니다.</h5>
+        {% endif %}
+    </div>
+</section>
+<br>
+<section>
+    <form name = "modelform2" action = "/" method = "post">
+        원하시는 날짜를 입력하세요: <input type="text" name="date_temp2"
+                               placeholder="(월 단위(0 = 2019/03))"/>&nbsp;
+        <br>
+        원하시는 연령대를 입력하세요: <input type="text" name="age_temp"
+                                placeholder="(연령단위(1 = 20대 ~ 7 = 80대)"/>
+        <input type = "submit" value = "입력"/>
+        <input type = "reset" value = "취소"/>
+    </form>
+    <div>
+        {% if use  %}
+            <h5>결과: {{'%0.0f' % use  }}의 사용빈도가 예측됩니다.</h5>
+        {% endif %}
+    </div>
+</section>
+</body>
+</html>
